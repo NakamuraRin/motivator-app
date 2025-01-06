@@ -27,3 +27,17 @@ npm-debug.log.*
 *.css.d.ts
 *.sass.d.ts
 *.scss.d.ts
+
+# npmキャッシュ
+.npm/
+
+# 環境設定ファイル
+.env
+.env.local
+.env.*.local
+
+# VSCode設定
+.vscode/
+
+# その他
+.idea/
