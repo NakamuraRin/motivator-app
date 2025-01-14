@@ -1,0 +1,65 @@
+.todo__title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.task__add--button {
+  margin-bottom: 10px;
+}
+
+.task__list--container {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.task__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task__checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.task__name {
+  flex: 2;
+  font-size: 16px;
+}
+
+.task__limit {
+  flex: 1;
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.task__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task__actions button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.task__actions button:hover {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+}

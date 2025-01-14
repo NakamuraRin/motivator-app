@@ -5,15 +5,22 @@
  * electron renderer process from here and communicate with the other processes
  * through IPC.
  *
- * When running `npm run build` or `npm run build:main`, this file is compiled to
- * `./src/main.js` using webpack. This gives us some performance wins.
+ * When running npm run build or npm run build:main, this file is compiled to
+ * ./src/main.js using webpack. This gives us some performance wins.
  */
 import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
+import Store from 'electron-store';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+
+interface StoreType {
+  taskList: any[];
+}
+
+const storeData = new Store<StoreType>();
 
 class AppUpdater {
   constructor() {
@@ -135,3 +142,11 @@ app
     });
   })
   .catch(console.log);
+
+ipcMain.handle('loadTaskList', async () => {
+  return storeData.get('taskList');
+});
+
+ipcMain.handle('storeTaskList', async (_, data) => {
+  storeData.set('taskList', data);
+});
