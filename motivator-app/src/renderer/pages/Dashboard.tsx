@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
+import BackToHome from '../components/BackToHome';
 
-function Settings() {
+function Dashboard() {
   return (
     <div>
       <Header />
-      <div>設定画面</div>
+      <BackToHome />
+      <div>過去の作業履歴画面</div>
       <Link to="/">Home</Link>
     </div>
   );
 }
 
-export default Settings;
+export default Dashboard;

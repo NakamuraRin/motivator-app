@@ -7,7 +7,13 @@ interface TaskEditButtonProps {
 function TaskEditButton({ taskId }: TaskEditButtonProps) {
   return (
     <Link to={`/todo/edit/${taskId}`}>
-      <div className="edit__button">編集</div>
+      <button
+        className="task__edit--button"
+        type="button"
+        aria-label="タスクを編集"
+      >
+        編集
+      </button>
     </Link>
   );
 }

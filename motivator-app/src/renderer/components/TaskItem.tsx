@@ -25,11 +25,14 @@ function TaskItem({ task }: TaskItemProps) {
     <div className="task__item">
       <input
         type="checkbox"
+        id={task.taskId}
         checked={task.isDone}
         onChange={handleToggleStatus}
         className="task__checkbox"
       />
-      <span className="task__name">{task.taskName}</span>
+      <label htmlFor={task.taskId} className="task__name">
+        {task.taskName}
+      </label>
       <span className="task__limit">
         {new Date(task.limit).toLocaleDateString()}
       </span>

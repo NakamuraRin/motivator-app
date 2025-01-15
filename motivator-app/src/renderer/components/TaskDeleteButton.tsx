@@ -32,7 +32,7 @@ function TaskDeleteButton({ taskId }: TaskDeleteButtonProps) {
   return (
     <div>
       <button
-        className="delete__button"
+        className="task__delete--button"
         onClick={handleDelete}
         type="button"
         aria-label="タスクを削除"
